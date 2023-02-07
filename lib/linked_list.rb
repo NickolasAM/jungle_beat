@@ -11,10 +11,10 @@ class LinkedList
      @head = node
    else 
     current = @head
-     while current.next_node != nil
-      current = current.next_node
-     end
-     current.next_node = node
+      while current.next_node != nil
+        current = current.next_node
+      end
+    current.next_node = node
    end 
 
     return beat
@@ -33,23 +33,6 @@ class LinkedList
     # require'pry';binding.pry
     return str
   end
-
-    # xdef to_string
-    #   children.map
-    # end
-
-    # xxdef count
-    #   count = 0
-    #   if @head != nil
-    #     count += 1
-    #     current = @head
-    #     while current.next_node != nil
-    #       current = current.next_node
-    #       count += 1
-    #     end
-    #   end
-    #   return count
-    # end
 
   def count 
     count = 0
@@ -74,12 +57,12 @@ class LinkedList
   end
 
   def insert(index, beat)
-    require'pry';binding.pry
     node = Node.new(beat)
     if @head == nil
       @head = node
     else
       current = @head
+      # require'pry';binding.pry
       #we do want @head always point to the head of linkedlist so we have a copy = current(chnage Variable)
       (index - 1).times do
         current = current.next_node
@@ -89,22 +72,38 @@ class LinkedList
     end  
     return beat
   end
+
+  def find(index, beat)
+    str = ""
+    current = @head
+    index.times do
+      current = current.next_node
+    end
+    str += "#{current.data}"
+    (beat - 1).times do
+      current = current.next_node
+      str += " #{current.data}"
+    end
+    return str
+  end
+
+  def includes?(data)
+    current = @head
+    while current.next_node !=nil
+      if current.data == data
+        return true
+      end
+      current = current.next_node
+    end  
+    return false
+  end
+
+  def pop
+    if @head == nil
+      return nil
+    else current = @head
+      current = current.next_node
+      current 
+    end
+  end
 end
-
-
-
-  # xdef count 
-  #   children.count
-  # end
-
-  # xprivate
-
-  # def children_nodes
-  #   children = []
-  #   current = @head 
-  #   while current != nil
-  #     children.push(current)
-  #     current = current.next_node
-  #   end
-  #   return children
-  # end

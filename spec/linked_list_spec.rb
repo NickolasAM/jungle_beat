@@ -82,6 +82,52 @@ RSpec.describe LinkedList do
       expect(list.to_string).to eq("dop woo plop suu")
     end
   end
+
+  describe '#find' do
+    it 'find' do
+      list = LinkedList.new
+      list.append("deep")
+      list.append("woo")
+      list.append("shi")
+      list.append("shu")
+      list.append("blop")
+
+      expect(list.to_string).to eq("deep woo shi shu blop")
+      expect(list.find(2, 1)).to eq("shi")
+      expect(list.find(1, 3)).to eq("woo shi shu")
+    end
+  end
+
+  describe '#include?' do
+    it 'includes?' do
+      list = LinkedList.new
+      list.append("deep")
+      list.append("woo")
+      list.append("shi")
+      list.append("shu")
+      list.append("blop")
+
+      expect(list.to_string).to eq("deep woo shi shu blop")
+      expect(list.includes?("deep")).to eq(true)
+      expect(list.includes?("dep")).to eq(false)
+    end
+  end
+
+  describe '#pop' do
+    it 'pop' do
+      list = LinkedList.new
+      list.append("deep")
+      list.append("woo")
+      list.append("shi")
+      list.append("shu")
+      list.append("blop")
+
+      expect(list.to_string).to eq("deep woo shi shu blop")
+      expect(list.pop).to eq("blop")
+      expect(list.pop).to eq("shu")
+      expect(list.to_string).to eq("deep woo shi")
+    end
+  end
 end
 # require 'pry';binding.pry
 
