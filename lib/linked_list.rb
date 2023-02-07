@@ -99,11 +99,17 @@ class LinkedList
   end
 
   def pop
+    # require 'pry';binding.pry
     if @head == nil
       return nil
     else current = @head
-      current = current.next_node
-      current 
+      while current.next_node != nil
+        previous = current
+        current = current.next_node
+      end
+    previous.next_node = nil
+    last = current
+    return last.data
     end
   end
 end
