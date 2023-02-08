@@ -18,5 +18,4 @@ class JungleBeat
   def play
     `say -r 150 #{list.to_string}`
   end
-  # require'pry';binding.pry
 end
