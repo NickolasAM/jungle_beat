@@ -62,8 +62,6 @@ class LinkedList
       @head = node
     else
       current = @head
-      # require'pry';binding.pry
-      #we do want @head always point to the head of linkedlist so we have a copy = current(chnage Variable)
       (index - 1).times do
         current = current.next_node
       end
