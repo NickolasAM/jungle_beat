@@ -30,7 +30,6 @@ class LinkedList
         str += " #{current.data}"
       end
     end
-    # require'pry';binding.pry
     return str
   end
 
