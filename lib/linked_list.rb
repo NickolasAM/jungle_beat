@@ -99,8 +99,8 @@ class LinkedList
   end
 
   def pop
-    # require 'pry';binding.pry
     if @head == nil
+      require 'pry';binding.pry
       return nil
     else current = @head
       while current.next_node != nil

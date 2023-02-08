@@ -121,7 +121,6 @@ RSpec.describe LinkedList do
       list.append("shi")
       list.append("shu")
       list.append("blop")
-      require 'pry';binding.pry
       
       expect(list.to_string).to eq("deep woo shi shu blop")
       expect(list.pop).to eq("blop")
