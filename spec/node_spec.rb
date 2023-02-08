@@ -23,4 +23,3 @@ RSpec.describe Node do
     expect(node.next_node).to eq(node2)
   end
 end
-# require 'pry';binding.pry
