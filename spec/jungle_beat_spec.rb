@@ -42,9 +42,7 @@ RSpec.describe JungleBeat do
       expect(jb.list.count).to be(6)
       expect(jb.play).to be()
     end
-
   end
-
 end
 
 
